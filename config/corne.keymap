@@ -6,6 +6,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -19,15 +20,6 @@
 #define SYMB 3
 
 / {
-    macros {
-        main_password: main_password {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6>;
-            label = "MAIN_PASSWORD";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -60,7 +52,7 @@
 
         layer_3 {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans            &trans             &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bl BL_TOG        &trans             &trans  &trans  &trans  &trans
 &caps_word  &main_password  &trans        &trans        &trans        &trans          &ext_power EP_ON  &ext_power EP_OFF  &trans  &trans  &trans  &trans
 &trans      &trans          &trans        &trans        &trans        &trans          &trans            &trans             &trans  &trans  &trans  &trans
                                           &trans        &trans        &trans          &trans            &trans             &trans
